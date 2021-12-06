@@ -34,7 +34,7 @@ function App() {
    * @returns JSON
    */
   const fetchTasks = async () => {
-    const res = await fetch("http://localhost:5000/tasks");
+    const res = await fetch("https://task-reminder-c6369-default-rtdb.firebaseio.com/tasks.json");
     const data = await res.json();
     return data;
   };
@@ -43,7 +43,7 @@ function App() {
    * Fetch a single task based on id
    */
   const fetchTask = async (id) => {
-    const res = await fetch(`http://localhost:5000/tasks/${id}`);
+    const res = await fetch(`https://task-reminder-c6369-default-rtdb.firebaseio.com/tasks.json/${id}`);
     const data = res.json();
     return data;
   };
@@ -55,7 +55,7 @@ function App() {
 
   const addTask = async (task) => {
     console.log(task);
-    const res = await fetch("http://localhost:5000/tasks", {
+    const res = await fetch("https://task-reminder-c6369-default-rtdb.firebaseio.com/tasks.json", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -64,7 +64,9 @@ function App() {
     });
 
     const data = await res.json();
-
+    /**
+     *
+     */
     setTasks([...tasks, data]);
   };
 
@@ -73,7 +75,7 @@ function App() {
    * @param {*} id
    */
   const deleteTask = async (id) => {
-    await fetch(`http://localhost:5000/tasks/${id}`, {
+    await fetch(`https://task-reminder-c6369-default-rtdb.firebaseio.com/tasks.json/${id}`, {
       method: "DELETE",
     });
 
@@ -90,7 +92,7 @@ function App() {
       ...taskToToggle,
       reminder: !taskToToggle.reminder,
     };
-    const res = await fetch(`http://localhost:5000/tasks/${id}`, {
+    const res = await fetch(`https://task-reminder-c6369-default-rtdb.firebaseio.com/tasks.json/${id}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",
