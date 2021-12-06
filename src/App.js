@@ -34,7 +34,7 @@ function App() {
    * @returns JSON
    */
   const fetchTasks = async () => {
-    const res = await fetch("https://task-reminder-c6369-default-rtdb.firebaseio.com/tasks.json");
+    const res = await fetch("https://my-json-server.typicode.com/officialbidisha/React-Task-Reminder/tasks");
     const data = await res.json();
     console.log(data);
     return data;
@@ -44,7 +44,7 @@ function App() {
    * Fetch a single task based on id
    */
   const fetchTask = async (id) => {
-    const res = await fetch(`https://task-reminder-c6369-default-rtdb.firebaseio.com/tasks.json/${id}`);
+    const res = await fetch(`https://my-json-server.typicode.com/officialbidisha/React-Task-Reminder/tasks?id=${id}`);
     const data = res.json();
     return data;
   };
@@ -56,7 +56,7 @@ function App() {
 
   const addTask = async (task) => {
     console.log(task);
-    const res = await fetch("https://task-reminder-c6369-default-rtdb.firebaseio.com/tasks.json", {
+    const res = await fetch("https://my-json-server.typicode.com/officialbidisha/React-Task-Reminder/tasks", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -76,9 +76,16 @@ function App() {
    * @param {*} id
    */
   const deleteTask = async (id) => {
-    await fetch(`https://task-reminder-c6369-default-rtdb.firebaseio.com/tasks.json/${id}`, {
+    await fetch(`https://my-json-server.typicode.com/officialbidisha/React-Task-Reminder/tasks/{id}`, {
       method: "DELETE",
-    });
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      redirect: 'manual',
+    }).then((data)=>{
+      console.log(data);
+    })
+    
 
     setTasks(tasks.filter((task) => task.id !== id));
   };
@@ -89,15 +96,17 @@ function App() {
    */
   const toggleReminder = async (id) => {
     const taskToToggle = await fetchTask(id);
+    debugger;
     const updatedTask = {
-      ...taskToToggle,
-      reminder: !taskToToggle.reminder,
+      ...taskToToggle[0],
+      reminder: !taskToToggle[0].reminder,
     };
-    const res = await fetch(`https://task-reminder-c6369-default-rtdb.firebaseio.com/tasks.json/${id}`, {
+    const res = await fetch(`https://my-json-server.typicode.com/officialbidisha/React-Task-Reminder/tasks/${id}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",
       },
+
       body: JSON.stringify(updatedTask),
     });
     const data = await res.json();
@@ -106,7 +115,8 @@ function App() {
      */
     setTasks(
       tasks.map((task) =>
-        task.id === id ? { ...task, reminder: !data.reminder } : task
+          task.id === id ? { ...task, reminder: data.reminder } : task
+        
       )
     );
   };
@@ -123,13 +133,14 @@ function App() {
         />
         <Route
           path='/'
+          exact
           render={(props) => (
             <>
               {showAddTask ? <AddTask onAdd={addTask} />: ''}
               {tasks.length > 0 ? (
                 <Tasks
                   tasks={tasks}
-                  onDelete={deleteTask}
+                  deleteTask={deleteTask}
                   onToggle={toggleReminder}
                 />
               ) : (
