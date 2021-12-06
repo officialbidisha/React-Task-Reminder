@@ -133,7 +133,6 @@ function App() {
         />
         <Route
           path='/'
-          exact
           render={(props) => (
             <>
               {showAddTask ? <AddTask onAdd={addTask} />: ''}
