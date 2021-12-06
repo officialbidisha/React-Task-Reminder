@@ -2,8 +2,6 @@ import React from "react";
 import { useState } from "react";
 import {Task} from './Task';
 const Tasks = ({tasks, deleteTask, onToggle}) => {
-
-
   return(
       <>
         {tasks.map((task, index)=>(
