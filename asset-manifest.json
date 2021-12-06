@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/officialbidisha/React-Task-Reminder/static/css/main.fe2c6ba5.chunk.css",
-    "main.js": "/officialbidisha/React-Task-Reminder/static/js/main.09ee7c13.chunk.js",
-    "main.js.map": "/officialbidisha/React-Task-Reminder/static/js/main.09ee7c13.chunk.js.map",
-    "runtime-main.js": "/officialbidisha/React-Task-Reminder/static/js/runtime-main.10d89123.js",
-    "runtime-main.js.map": "/officialbidisha/React-Task-Reminder/static/js/runtime-main.10d89123.js.map",
-    "static/css/2.e3df6fb3.chunk.css": "/officialbidisha/React-Task-Reminder/static/css/2.e3df6fb3.chunk.css",
-    "static/js/2.325683b8.chunk.js": "/officialbidisha/React-Task-Reminder/static/js/2.325683b8.chunk.js",
-    "static/js/2.325683b8.chunk.js.map": "/officialbidisha/React-Task-Reminder/static/js/2.325683b8.chunk.js.map",
-    "index.html": "/officialbidisha/React-Task-Reminder/index.html",
-    "static/css/2.e3df6fb3.chunk.css.map": "/officialbidisha/React-Task-Reminder/static/css/2.e3df6fb3.chunk.css.map",
-    "static/css/main.fe2c6ba5.chunk.css.map": "/officialbidisha/React-Task-Reminder/static/css/main.fe2c6ba5.chunk.css.map",
-    "static/js/2.325683b8.chunk.js.LICENSE.txt": "/officialbidisha/React-Task-Reminder/static/js/2.325683b8.chunk.js.LICENSE.txt",
-    "static/media/primeicons.css": "/officialbidisha/React-Task-Reminder/static/media/primeicons.e61f3495.woff"
+    "main.css": "/React-Task-Reminder/static/css/main.fe2c6ba5.chunk.css",
+    "main.js": "/React-Task-Reminder/static/js/main.09ee7c13.chunk.js",
+    "main.js.map": "/React-Task-Reminder/static/js/main.09ee7c13.chunk.js.map",
+    "runtime-main.js": "/React-Task-Reminder/static/js/runtime-main.20ec05e6.js",
+    "runtime-main.js.map": "/React-Task-Reminder/static/js/runtime-main.20ec05e6.js.map",
+    "static/css/2.3e3777d3.chunk.css": "/React-Task-Reminder/static/css/2.3e3777d3.chunk.css",
+    "static/js/2.325683b8.chunk.js": "/React-Task-Reminder/static/js/2.325683b8.chunk.js",
+    "static/js/2.325683b8.chunk.js.map": "/React-Task-Reminder/static/js/2.325683b8.chunk.js.map",
+    "index.html": "/React-Task-Reminder/index.html",
+    "static/css/2.3e3777d3.chunk.css.map": "/React-Task-Reminder/static/css/2.3e3777d3.chunk.css.map",
+    "static/css/main.fe2c6ba5.chunk.css.map": "/React-Task-Reminder/static/css/main.fe2c6ba5.chunk.css.map",
+    "static/js/2.325683b8.chunk.js.LICENSE.txt": "/React-Task-Reminder/static/js/2.325683b8.chunk.js.LICENSE.txt",
+    "static/media/primeicons.css": "/React-Task-Reminder/static/media/primeicons.e61f3495.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.10d89123.js",
-    "static/css/2.e3df6fb3.chunk.css",
+    "static/js/runtime-main.20ec05e6.js",
+    "static/css/2.3e3777d3.chunk.css",
     "static/js/2.325683b8.chunk.js",
     "static/css/main.fe2c6ba5.chunk.css",
     "static/js/main.09ee7c13.chunk.js"
