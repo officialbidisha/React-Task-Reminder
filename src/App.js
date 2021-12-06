@@ -36,6 +36,7 @@ function App() {
   const fetchTasks = async () => {
     const res = await fetch("https://task-reminder-c6369-default-rtdb.firebaseio.com/tasks.json");
     const data = await res.json();
+    console.log(data);
     return data;
   };
 
@@ -54,6 +55,7 @@ function App() {
    */
 
   const addTask = async (task) => {
+    console.log(task);
     const res = await fetch("https://task-reminder-c6369-default-rtdb.firebaseio.com/tasks.json", {
       method: "POST",
       headers: {
@@ -63,7 +65,9 @@ function App() {
     });
 
     const data = await res.json();
-
+    /**
+     *
+     */
     setTasks([...tasks, data]);
   };
 
